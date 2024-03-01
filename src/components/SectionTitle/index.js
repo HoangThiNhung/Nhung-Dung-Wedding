@@ -1,6 +1,6 @@
 import React from 'react'
 // import Simg from '../../images/section-title.png'
-import Simg from '../../images/contact/lavender.png'
+import Simg from '../../images/contact/letter2.png'
 
 
 const SectionTitle = (props) => {
