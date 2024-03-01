@@ -7,83 +7,83 @@ const menus = [
     {
         id: 1,
         title: 'Home',
-        link: '/home',
-        submenu: [
-            {
-                id: 11,
-                title: 'Main Home',
-                link: '/home'
-            },
-            {
-                id: 12,
-                title: 'Wedding Planner',
-                link: '/home2'
-            },
-            {
-                id: 13,
-                title: 'Announcement S1',
-                link: '/home3'
-            },
-            {
-                id: 14,
-                title: 'Announcement S2',
-                link: '/home4'
-            },
-            {
-                id: 15,
-                title: 'Wedding Home',
-                link: '/home5'
-            },
-            {
-                id: 16,
-                title: 'Shop Home',
-                link: '/home6'
-            },
-            {
-                id: 17,
-                title: 'Invitation',
-                link: '/home7'
-            },
-        ]
+        link: '/',
+        // submenu: [
+        //     {
+        //         id: 11,
+        //         title: 'Main Home',
+        //         link: '/home'
+        //     },
+        //     {
+        //         id: 12,
+        //         title: 'Wedding Planner',
+        //         link: '/home2'
+        //     },
+        //     {
+        //         id: 13,
+        //         title: 'Announcement S1',
+        //         link: '/home3'
+        //     },
+        //     {
+        //         id: 14,
+        //         title: 'Announcement S2',
+        //         link: '/home4'
+        //     },
+        //     {
+        //         id: 15,
+        //         title: 'Wedding Home',
+        //         link: '/home5'
+        //     },
+        //     {
+        //         id: 16,
+        //         title: 'Shop Home',
+        //         link: '/home6'
+        //     },
+        //     {
+        //         id: 17,
+        //         title: 'Invitation',
+        //         link: '/home7'
+        //     },
+        // ]
     },
 
-    {
-        id: 5,
-        title: 'Blog',
-        link: '/blog',
-        submenu: [
-            {
-                id: 51,
-                title: 'Blog',
-                link: '/blog'
-            },
-            {
-                id: 52,
-                title: 'Blog Left sidebar',
-                link: '/blog-left'
-            },
-            {
-                id: 53,
-                title: 'Blog full width',
-                link: '/blog-fullwidth'
-            },
-            {
-                id: 54,
-                title: 'Blog single',
-                link: '/blog-single/1'
-            },
-            {
-                id: 55,
-                title: 'Blog single Left sidebar',
-                link: '/blog-single-left-sidebar/1'
-            },
-            {
-                id: 56,
-                title: 'Blog single Left sidebar',
-                link: '/blog-single-fullwidth/1'
-            },
-        ]
-    },
+    // {
+    //     id: 5,
+    //     title: 'Blog',
+    //     link: '/blog',
+    //     submenu: [
+    //         {
+    //             id: 51,
+    //             title: 'Blog',
+    //             link: '/blog'
+    //         },
+    //         {
+    //             id: 52,
+    //             title: 'Blog Left sidebar',
+    //             link: '/blog-left'
+    //         },
+    //         {
+    //             id: 53,
+    //             title: 'Blog full width',
+    //             link: '/blog-fullwidth'
+    //         },
+    //         {
+    //             id: 54,
+    //             title: 'Blog single',
+    //             link: '/blog-single/1'
+    //         },
+    //         {
+    //             id: 55,
+    //             title: 'Blog single Left sidebar',
+    //             link: '/blog-single-left-sidebar/1'
+    //         },
+    //         {
+    //             id: 56,
+    //             title: 'Blog single Left sidebar',
+    //             link: '/blog-single-fullwidth/1'
+    //         },
+    //     ]
+    // },
 
     
     
