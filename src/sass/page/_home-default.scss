@@ -1032,7 +1032,7 @@
                 height: 50px;
                 margin-bottom: 20px;
                 border: 0;
-                border-bottom: 1px solid #cde0ef;
+                border-bottom: 1px solid $header-color;
                 background: transparent;
 				border-radius: 0;
 				color: $theme-primary-color-s2;
@@ -1065,7 +1065,7 @@
     
     
             select.form-control{
-                color: #6c757d;
+                color: $theme-primary-color-s2;
                 -webkit-appearance: none;
                 -ms-appearance: none;
                 -o-appearance: none;

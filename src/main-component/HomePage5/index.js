@@ -8,9 +8,9 @@ import PortfolioSection from '../../components/PortfolioSection';
 import RSVP from '../../components/RSVP';
 import CtaSection2 from '../../components/CtaSection2';
 // import BlogSection2 from '../../components/BlogSection2';
-import Scrollbar from '../../components/scrollbar'
+// import Scrollbar from '../../components/scrollbar'
 import Logo from "../../images/logo7.png";
-import Footer from '../../components/footer';
+// import Footer from '../../components/footer';
 import PartnerSection from '../../components/PartnerSection';
 import EventSection from '../../components/EventSection';
 
@@ -31,8 +31,8 @@ const HomePage5 =() => {
             <EventSection/>
             <PartnerSection tNone={'wpo-partners-section-s3'}/>
             {/* <BlogSection2 blogClass={'wpo-blog-section-s3'}/> */}
-            <Footer/>
-            <Scrollbar/>
+            {/* <Footer/>
+            <Scrollbar/> */}
         </Fragment>
     )
 };

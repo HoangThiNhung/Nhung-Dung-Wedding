@@ -20,10 +20,10 @@ const StorySection = (props) => {
                         <div className="story-timeline">
                             <div className="round-shape"></div>
                             <div className="row">
-                                <div className="col col-lg-6 col-12">
+                                <div className="col col-lg-6 col-12 text-holder revert-direction">
                                     <div className="story-text right-align-text">
-                                        <h3>First time we meet</h3>
-                                        <span className="date">Nov 12,2021</span>
+                                        <h3>Lễ ăn hỏi</h3>
+                                        <span className="date">Sep 22,2024</span>
                                         <p>I must explain to you how all this mistaken idea of denouing pleasure and praising pain was born and I will give you com acount of system,the actual teach</p>
                                     </div>
                                 </div>
@@ -50,48 +50,8 @@ const StorySection = (props) => {
                                         <i className="fi flaticon-heart"></i>
                                     </span>
                                     <div className="story-text">
-                                        <h3>First Date</h3>
-                                        <span className="date">Dec 25,2021</span>
-                                        <p>I must explain to you how all this mistaken idea of denouing pleasure and praising pain was born and I will give you com acount of system,the actual teach</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col col-lg-6 col-12 text-holder right-heart">
-                                    <span className="heart">
-                                        <i className="fi flaticon-calendar"></i>
-                                    </span>
-                                    <div className="story-text right-align-text">
-                                        <h3>Marriage Proposal</h3>
-                                        <span className="date">Nov 12,2021</span>
-                                        <p>I must explain to you how all this mistaken idea of denouing pleasure and praising pain was born and I will give you com acount of system,the actual teach</p>
-                                    </div>
-                                </div>
-                                <div className="col col-lg-6 col-12">
-                                    <div className="img-holder right-align-text">
-                                        <img src={sImg3} alt="" className="img img-responsive"/>
-                                        <div className="story-shape-img">
-                                            <img src={shape} alt=""/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col col-lg-6 col-12">
-                                    <div className="img-holder video-holder left-site">
-                                        <img src={sImg4} alt="" className="img img-responsive"/>
-                                        <div className="story-shape-img">
-                                            <img src={shape} alt=""/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col col-lg-6 col-12 text-holder">
-                                    <span className="heart">
-                                        <i className="fi flaticon-dove"></i>
-                                    </span>
-                                    <div className="story-text">
-                                        <h3>Our Engagement</h3>
-                                        <span className="date">Dec 25,2021</span>
+                                        <h3>Lễ cưới</h3>
+                                        <span className="date">Sep 22,2024</span>
                                         <p>I must explain to you how all this mistaken idea of denouing pleasure and praising pain was born and I will give you com acount of system,the actual teach</p>
                                     </div>
                                 </div>

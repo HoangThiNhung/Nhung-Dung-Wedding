@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import SectionTitle from '../../components/SectionTitle'
+import Congratulations from '../../components/Congratulations';
 
 // import vec3 from '../../images/contact/couple.png'
 import vec3 from '../../images/contact/couple2.png'
@@ -7,18 +8,14 @@ import vec3 from '../../images/contact/couple2.png'
 import vec2 from '../../images/contact/right.png'
 
 class RSVP extends Component {
-
-
     state = {
         name: '',
         email: '',
-        address: '',
-        meal: '',
-        service: '',
-        guest: '',
+        message: '',
+        join: '',
+        showCongratulations: false,
         error: {}
     }
-
 
     changeHandler = (e) => {
         const error = this.state.error;
@@ -30,60 +27,62 @@ class RSVP extends Component {
         })
     }
 
-    subimtHandler = (e) => {
+    submitHandler = async (e) => {
         e.preventDefault();
-
         const { name,
             email,
-            address,
-            service,
-            meal,
-            guest, error } = this.state;
+            message,
+            join,
+            error,
+        } = this.state;
 
         if (name === '') {
             error.name = "Please enter your name";
         }
-        if (email === '') {
-            error.email = "Please enter your email";
+        if (message === '') {
+            error.message = "Please enter your message";
         }
-        if (address === '') {
-            error.address = "Please enter your address";
+        if (join === '') {
+            error.join = "Hãy xác nhận khả năng tham gia của bạn";
         }
-        if (service === '') {
-            error.service = "Please Select your service";
-        }
-        if (guest === '') {
-            error.guest = "Please Select your Guest List";
-        }
-        if (meal === '') {
-            error.meal = "Select Select Your Meal";
-        }
-
 
         if (error) {
             this.setState({
                 error
             })
         }
-        if (error.name === '' && error.email === '' && error.email === '' && error.service === '' && error.address === '' && error.meal === '' && error.guest === '') {
-            this.setState({
-                name: '',
-                email: '',
-                address: '',
-                meal: '',
-                guest: '',
-                error: {}
-            })
+        if (error.name === '' && error.email === '' && error.message === '' && error.join === '') {
+            try {
+                const response = await fetch('https://k0cje4non2.execute-api.ap-northeast-1.amazonaws.com/v1/greetings', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ name: name, email: email, message: message, join: join }),
+                });
+
+                this.setState({
+                    name: '',
+                    email: '',
+                    message: '',
+                    join: '',
+                    showCongratulations: true,
+                    error: {}
+                })
+          
+                if (!response.ok) throw new Error('Error in API call');
+            } catch (error) {
+                console.error('Failed to submit confirmation:', error);
+            }
         }
     }
 
     render(){
         const { name,
             email,
-            address,
-            service,
-            guest,
-            meal,
+            message,
+            join,
+            showCongratulations,
             error } = this.state;
 
         return(
@@ -91,12 +90,12 @@ class RSVP extends Component {
                 <div className="container">
                     <div className="wpo-contact-section-wrapper">
                         <div className="wpo-contact-form-area">
-                            <SectionTitle topTitle={'Let’s Meet'} MainTitle={'Make an inquiry'}/>
-                            <form onSubmit={this.subimtHandler} className="form">
+                            <SectionTitle topTitle={'Sổ Lưu Bút'} MainTitle={'Để lại lời chúc của bạn tại đây nhé!'}/>
+                            <form onSubmit={this.submitHandler} className="form">
                                 <div className="row">
                                     <div>
                                         <div className="form-field">
-                                            <input value={name} onChange={this.changeHandler} className="form-control" type="text" name="name" placeholder="Name"/>
+                                            <input value={name} onChange={this.changeHandler} className="form-control" type="text" name="name" placeholder="Họ & Tên" required/>
                                             <p>{error.name ? error.name : ''}</p>
                                         </div>
                                     </div>
@@ -108,51 +107,32 @@ class RSVP extends Component {
                                     </div>
                                     <div>
                                         <div className="form-field">
-                                            <input onChange={this.changeHandler} value={address} type="text" className="form-control" name="address" placeholder="address"/>
-                                            <p>{error.address ? error.address : ''}</p>
+                                            <textarea onChange={this.changeHandler} value={message} type="text" className="form-control" name="message" placeholder="Lời chúc" required/>
+                                            <p>{error.message ? error.message : ''}</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <select name="service" className="form-control" value={service} onChange={this.changeHandler}>
-                                            <option>Service</option>
-                                            <option>Photography</option>
-                                            <option>The Rehearsal Dinner</option>
-                                            <option>The Afterparty</option>
-                                            <option>Videographers</option>
-                                            <option>Perfect Cake</option>
-                                            <option>All Of The Above</option>
-                                        </select>
-                                        <p>{error.service ? error.service : ''}</p>
-                                    </div>
-                                    <div>
-                                        <select name="guest" className="form-control" value={guest} onChange={this.changeHandler}>
-                                            <option>Number Of Guests</option>
-                                            <option>01</option>
-                                            <option>02</option>
-                                            <option>03</option>
-                                            <option>04</option>
-                                            <option>05</option>
-                                        </select>
-                                        <p>{error.guest ? error.guest : ''}</p>
-                                    </div>
-                                    <div>
-                                        <select name="meal" className="form-control last" value={meal} onChange={this.changeHandler}>
-                                            <option>Meal Preferences</option>
-                                            <option>Chicken Soup</option>
-                                            <option>Motton Kabab</option>
-                                            <option>Chicken BBQ</option>
-                                            <option>Mix Salad</option>
-                                            <option>Beef Ribs </option>
-                                        </select>
-                                        <p>{error.meal ? error.meal : ''}</p>
+                                        <div className="form-field">
+                                            <select name="join" className="form-control last" value={join} onChange={this.changeHandler} required>
+                                                <option value="">Xác nhận tham gia tiệc</option>
+                                                <option>Có tham gia tiệc nhà gái</option>
+                                                <option>Không tham gia tiệc nhà gái</option>
+                                                <option>Có tham gia tiệc nhà trai</option>
+                                                <option>Không tham gia tiệc nhà trai</option>
+                                                <option>Có tham gia tiệc ở Nhật</option>
+                                                <option>Không tham gia tiệc ở Nhật</option>
+                                            </select>
+                                        </div>
+                                        <p>{error.join ? error.join : ''}</p>
                                     </div>
                                     <div className="submit-area">
                                         <div className="form-submit">
-                                            <button type="submit" className="theme-btn-s3">Send Message</button>
+                                            <button type="submit" className="theme-btn-s3">Gửi lời chúc</button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
+                            <Congratulations show={showCongratulations} />
                             <div className="border-style"></div>
                         </div>
                         <div className="vector-1">
@@ -166,6 +146,5 @@ class RSVP extends Component {
             </section>
         )
     }
-
 }
 export default  RSVP;

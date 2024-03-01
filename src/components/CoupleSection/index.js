@@ -20,7 +20,7 @@ class CoupleSection extends Component {
                                     <img src={coupleImg1} alt=""/>
                                 </div>
                                 <div className="col-lg-8 col-sm-12 info">
-                                    <h2>Daniel Oliver</h2>
+                                    <h2>Hoàng Nhung</h2>
                                     <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis give you com of system. </p>
                                     {/* <div className="social">
                                         <ul>
@@ -33,7 +33,7 @@ class CoupleSection extends Component {
                             </div>
                             <div className="row text-grid groom">
                                 <div className="col-lg-8 col-sm-12 info revert-direction">
-                                    <h2>Sarah Margrate</h2>
+                                    <h2>Anh Dũng</h2>
                                     <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis give you com of system.</p>
                                     {/* <div className="social">
                                         <ul>

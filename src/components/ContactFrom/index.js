@@ -7,10 +7,7 @@ class ContactForm extends Component {
     state = {
         name: '',
         email: '',
-        service: '',
-        lastname: '',
-        events: '',
-        notes: '',
+        message: '',
         error: {}
     }
 
@@ -30,10 +27,7 @@ class ContactForm extends Component {
 
         const { name,
             email,
-            service,
-            lastname,
-            events,
-            notes, error } = this.state;
+            message, error } = this.state;
 
         if (name === '') {
             error.name = "Please enter your name";
@@ -41,17 +35,8 @@ class ContactForm extends Component {
         if (email === '') {
             error.email = "Please enter your email";
         }
-        if (service === '') {
-            error.service = "Please enter your service";
-        }
-        if (lastname === '') {
-            error.lastname = "Please enter your Lastname";
-        }
-        if (events === '') {
-            error.events = "Select your event list";
-        }
-        if (notes === '') {
-            error.notes = "Please enter your note";
+        if (message === '') {
+            error.message = "Please enter your message";
         }
 
 
@@ -60,13 +45,11 @@ class ContactForm extends Component {
                 error
             })
         }
-        if (error.name === '' && error.email === '' && error.email === '' && error.lastname === '' && error.service === '' && error.events === '' && error.notes === '') {
+        if (error.name === '' && error.email === '' && error.email === '' && error.notes === '') {
             this.setState({
                 name: '',
                 email: '',
-                service: '',
-                events: '',
-                notes: '',
+                message: '',
                 error: {}
             })
         }
@@ -75,8 +58,7 @@ class ContactForm extends Component {
     render(){
         const { name,
             email,
-            service,
-            lastname,
+            message,
             error } = this.state;
 
         return(
@@ -90,29 +72,9 @@ class ContactForm extends Component {
                     </div>
                     <div className="col-lg-6 col-md-6 col-12">
                         <div className="form-field">
-                            <input value={lastname} onChange={this.changeHandler} type="text" name="lastname" placeholder="Lastname"/>
-                            <p>{error.lastname ? error.lastname : ''}</p>
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-12">
-                        <div className="form-field">
                             <input onChange={this.changeHandler} value={email} type="email" name="email" placeholder="Email"/>
                             <p>{error.email ? error.email : ''}</p>
                         </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-12">
-                    <div>
-                        <select name="service" className="form-control" value={service} onChange={this.changeHandler}>
-                            <option>Service</option>
-                            <option>Photography</option>
-                            <option>The Rehearsal Dinner</option>
-                            <option>The Afterparty</option>
-                            <option>Videographers</option>
-                            <option>Perfect Cake</option>
-                            <option>All Of The Above</option>
-                        </select>
-                        <p>{error.service ? error.service : ''}</p>
-                    </div>
                     </div>
                     <div className="col-lg-12">
                         <div className="form-field">
