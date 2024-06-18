@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import SectionTitle from '../../components/SectionTitle'
-import Congratulations from '../../components/Congratulations';
+// import Congratulations from '../../components/Congratulations';
 
-// import vec3 from '../../images/contact/couple.png'
 import vec3 from '../../images/contact/couple2.png'
-// import vec2 from '../../images/contact/2.png'
 import vec2 from '../../images/contact/right.png'
+import letter from '../../images/contact/letter2.png'
+import sentSuccess from '../../images/contact/success.png'
 
 class RSVP extends Component {
     state = {
@@ -13,8 +13,10 @@ class RSVP extends Component {
         email: '',
         message: '',
         join: '',
-        showCongratulations: false,
-        error: {}
+        // showCongratulations: false,
+        error: {},
+        mainTitle: 'Để lại lời chúc của bạn tại đây nhé!',
+        letter: letter
     }
 
     changeHandler = (e) => {
@@ -37,10 +39,10 @@ class RSVP extends Component {
         } = this.state;
 
         if (name === '') {
-            error.name = "Please enter your name";
+            error.name = "Hãy cho chúng mình biết tên của bạn nhé";
         }
         if (message === '') {
-            error.message = "Please enter your message";
+            error.message = "Hãy nhập lời chúc mủa bạn";
         }
         if (join === '') {
             error.join = "Hãy xác nhận khả năng tham gia của bạn";
@@ -51,7 +53,8 @@ class RSVP extends Component {
                 error
             })
         }
-        if (error.name === '' && error.email === '' && error.message === '' && error.join === '') {
+
+        if (error.name === '' && error.message === '' && error.join === '') {
             try {
                 const response = await fetch('https://k0cje4non2.execute-api.ap-northeast-1.amazonaws.com/v1/greetings', {
                   method: 'POST',
@@ -61,12 +64,16 @@ class RSVP extends Component {
                   body: JSON.stringify({ name: name, email: email, message: message, join: join }),
                 });
 
+                console.log(response)
+
                 this.setState({
                     name: '',
                     email: '',
                     message: '',
                     join: '',
-                    showCongratulations: true,
+                    // showCongratulations: true,
+                    mainTitle: 'Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của bọn mình!',
+                    letter: sentSuccess,
                     error: {}
                 })
           
@@ -82,7 +89,9 @@ class RSVP extends Component {
             email,
             message,
             join,
-            showCongratulations,
+            // showCongratulations,
+            mainTitle,
+            letter,
             error } = this.state;
 
         return(
@@ -90,7 +99,7 @@ class RSVP extends Component {
                 <div className="container">
                     <div className="wpo-contact-section-wrapper">
                         <div className="wpo-contact-form-area">
-                            <SectionTitle topTitle={'Sổ Lưu Bút'} MainTitle={'Để lại lời chúc của bạn tại đây nhé!'}/>
+                            <SectionTitle topTitle={'Sổ Lưu Bút'} MainTitle={mainTitle} Simg={letter}/>
                             <form onSubmit={this.submitHandler} className="form">
                                 <div className="row">
                                     <div>
@@ -114,7 +123,7 @@ class RSVP extends Component {
                                     <div>
                                         <div className="form-field">
                                             <select name="join" className="form-control last" value={join} onChange={this.changeHandler} required>
-                                                <option value="">Xác nhận tham gia tiệc</option>
+                                                <option value="" disabled className="select-placeholder">Xác nhận tham gia tiệc</option>
                                                 <option>Có tham gia tiệc nhà gái</option>
                                                 <option>Không tham gia tiệc nhà gái</option>
                                                 <option>Có tham gia tiệc nhà trai</option>
@@ -132,7 +141,7 @@ class RSVP extends Component {
                                     </div>
                                 </div>
                             </form>
-                            <Congratulations show={showCongratulations} />
+                            {/* <Congratulations show={showCongratulations} /> */}
                             <div className="border-style"></div>
                         </div>
                         <div className="vector-1">

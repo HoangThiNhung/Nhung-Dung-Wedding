@@ -2,10 +2,10 @@ import React from 'react'
 import SectionTitleS2 from '../SectionTitleS2'
 import sImg1 from '../../images/portfolio/1.jpg'
 import sImg2 from '../../images/portfolio/2.jpg'
-import sImg3 from '../../images/portfolio/3.jpg'
-import sImg4 from '../../images/portfolio/4.jpg'
+// import sImg3 from '../../images/portfolio/3.jpg'
+// import sImg4 from '../../images/portfolio/4.jpg'
 
-import shape from '../../images/story/shape.png'
+// import shape from '../../images/story/shape.png'
 
 
 
@@ -30,9 +30,6 @@ const StorySection = (props) => {
                                 <div className="col col-lg-6 col-12">
                                     <div className="img-holder">
                                         <img src={sImg1} alt="" className="img img-responsive"/>
-                                        <div className="story-shape-img">
-                                            <img src={shape} alt=""/>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -40,9 +37,6 @@ const StorySection = (props) => {
                                 <div className="col col-lg-6 col-12">
                                     <div className="img-holder right-align-text left-site">
                                         <img src={sImg2} alt="" className="img img-responsive"/>
-                                        <div className="story-shape-img">
-                                            <img src={shape} alt=""/>
-                                        </div>
                                     </div>
                                 </div>
                                 <div className="col col-lg-6 col-12 text-holder">

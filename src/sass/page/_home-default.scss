@@ -1052,28 +1052,32 @@
 			}
 
 			.form-control::-webkit-input-placeholder { /* Edge */
-				color: $theme-primary-color-s2;
+				color: $theme-primary-color-placeholder;
 			  }
 			  
 			  .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
-				color: $theme-primary-color-s2;
+				color: $theme-primary-color-placeholder;
 			  }
 			  
 			  .form-control::placeholder {
-				color: $theme-primary-color-s2;
+				color: $theme-primary-color-placeholder;
 			  }
     
     
-            select.form-control{
-                color: $theme-primary-color-s2;
-                -webkit-appearance: none;
-                -ms-appearance: none;
-                -o-appearance: none;
-                appearance: none;
-                -moz-appearance: none;
-                background: transparent url(../../images/select-icon2.png) no-repeat calc(100% - 15px) center;
-                position: relative;
-            }
+				select.form-control{
+						color: $theme-primary-color-s2;
+						-webkit-appearance: none;
+						-ms-appearance: none;
+						-o-appearance: none;
+						appearance: none;
+						-moz-appearance: none;
+						background: transparent url(../../images/select-icon2.png) no-repeat calc(100% - 15px) center;
+						position: relative;
+				}
+
+				.select-placeholder {
+					color: $theme-primary-color-placeholder; /* Change this color to your desired placeholder color */
+				}
 
 			.select.last{
 				margin-bottom: 50px;

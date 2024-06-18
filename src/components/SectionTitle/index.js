@@ -1,16 +1,14 @@
 import React from 'react'
 // import Simg from '../../images/section-title.png'
-import Simg from '../../images/contact/letter2.png'
-
 
 const SectionTitle = (props) => {
     return(
         <div className="row">
             <div className="wpo-section-title">
                 <span>{props.topTitle}</span>
-                <h2>{props.MainTitle}</h2>
+                <div>{props.MainTitle}</div>
                 <div className="section-title-img">
-                    <img src={Simg} alt=""/>
+                    <img src={props.Simg} alt=""/>
                 </div>
             </div>
         </div>

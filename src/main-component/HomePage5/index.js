@@ -12,6 +12,7 @@ import CtaSection2 from '../../components/CtaSection2';
 import Logo from "../../images/logo7.png";
 // import Footer from '../../components/footer';
 import PartnerSection from '../../components/PartnerSection';
+import HopMungCuoi from '../../components/HopMungCuoi';
 import EventSection from '../../components/EventSection';
 
 
@@ -28,6 +29,7 @@ const HomePage5 =() => {
             <PortfolioSection/>
             <RSVP/>
             <CtaSection2/>
+            <HopMungCuoi/>
             <EventSection/>
             <PartnerSection tNone={'wpo-partners-section-s3'}/>
             {/* <BlogSection2 blogClass={'wpo-blog-section-s3'}/> */}
